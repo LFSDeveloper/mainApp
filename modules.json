@@ -1,0 +1,10 @@
+{
+  "projects": [
+    {
+      "name": "libraryOne",
+      "repoUrl": "https://github.com/LFSDeveloper/libraryOne.git",
+      "branch": "main",
+      "composed": true
+    }
+  ]
+}

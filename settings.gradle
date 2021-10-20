@@ -1,0 +1,33 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+
+        // from where libraryOne:testlibrary-debug will be resolved
+        mavenLocal()
+    }
+}
+
+// adding this buildScrip here to apply the buildSrc plugin during gradle initialization
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+
+        // from where buildSrc will be resolved
+        mavenLocal()
+    }
+
+    dependencies {
+        classpath 'com.techbyflorin.android:buildSrc:1.0-SNAPSHOT'
+    }
+}
+
+// applying buildSrc within setting
+apply plugin: 'com.techbyflorin.android.buildSrc.ComposeBuilds'
+
+rootProject.name = "MainApp"
+include ':app'
+
+
